@@ -25,7 +25,7 @@ jobs:
     - name: Deploy files to EC2
       run: |
         scp -o StrictHostKeyChecking=no -r ./* ec2-user@${{ secrets.EC2_PUBLIC_IP }}:/var/www/html/
-      
+
     - name: Set environment variables
       run: |
-        ssh -o StrictHostKeyChecking=no ec2-user@${{ secrets.EC2_PUBLIC_IP }} "echo 'DB_ENDPOINT=${{ secrets.DB_ENDPOINT }}' >> /etc/environment"
+        ssh -o StrictHostKeyChecking=no ec2-user@${{ secrets.EC2_PUBLIC_IP }} "echo 'DB_ENDPOINT=${{ secrets.DB_ENDPOINT }}' | sudo tee -a /etc/environment"
