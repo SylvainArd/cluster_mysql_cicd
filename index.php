@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 $servername = "aurora-cluster.cluster-c52ewkus4mtn.us-east-1.rds.amazonaws.com";
 $username = "exemple";
 $password = "2698$f!!:NbOIUY";
